@@ -1,0 +1,38 @@
+[
+  {
+    "family": "Chrome Mobile iOS",
+    "major": 49
+  },
+  {
+    "family": "Chrome",
+    "major": 49
+  },
+  {
+    "family": "IE",
+    "major": 12
+  },
+  {
+    "family": "Safari",
+    "major": 11
+  },
+  {
+    "family": "Mobile Safari",
+    "major": 10.2
+  },
+  {
+    "family": "Firefox",
+    "major": 57
+  },
+  {
+    "family": "Firefox",
+    "major": 57
+  },
+  {
+    "family": "Chrome Mobile",
+    "major": 64
+  },
+  {
+    "family": "UC Browser",
+    "major": 11.8
+  }
+]

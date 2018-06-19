@@ -7,8 +7,13 @@ const userSelector: any = createSelector(
     authDataSelector, (authData: Map<string, any>) => authData.get("user")
 );
 
+const messageSelector: any = createSelector(
+    authDataSelector, (authData: Map<string, any>) => authData.get("message")
+);
+
 export default state => {
     return {
-        user: userSelector(state)
+        user: userSelector(state),
+        message: messageSelector(state)
     };
 };

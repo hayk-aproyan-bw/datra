@@ -16,7 +16,11 @@ export function registrationSuccess(data: any): IAuthActions {
     return {type: actions.REGISTRATION_SUCCESS, payload: {data}};
 }
 
-export function registrationFailed(message: any): IAuthActions {
-    return {type: actions.REGISTRATION_FAILED, payload: {message}};
+export function registrationFailed(message: string): IAuthActions {
+    return {type: actions.REGISTRATION_FAILED, payload: {message: message}};
+}
+
+export function clear(): IAuthActions {
+    return {type: actions.CLEAR};
 }
 

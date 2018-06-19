@@ -1,0 +1,13 @@
+{
+  "required_error_message": "%{resource} is required",
+  "invalid_error_message": "%{resource} is invalid",
+  "email": "Email",
+  "sub_title": "Sub Title",
+  "title": "Title",
+
+  "feature_one_title": "Title Feature One",
+  "feature_two_title": "Title Feature Two",
+  "feature_three_title": "Title Feature Thee",
+
+  "register": "Register"
+}

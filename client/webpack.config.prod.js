@@ -92,8 +92,7 @@ module.exports = {
         }),
         new ExtractTextPlugin({filename: "css/style-[chunkhash].css", allChunks: false}),
         new CopyWebpackPlugin([
-            {from: 'public/img', to: 'img'},
-            {from: 'public/fonts', to: 'fonts'}
+            {from: 'public/images', to: 'img'}
         ], {debug: 'debug'})
     ]
 };

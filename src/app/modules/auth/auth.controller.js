@@ -19,7 +19,7 @@ export class AuthController {
             let user = await UserService.getByEmail(email);
 
             if (user) {
-                throw new BadRequest(ALREADY_EXISTS('User'));
+                throw new BadRequest(ALREADY_EXISTS('Email'));
             }
 
             user = await UserService.save({ title, subTitle, email });
