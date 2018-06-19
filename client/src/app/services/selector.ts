@@ -1,9 +1,11 @@
 import GetAuthSelector from "../modules/auth/AuthSelector";
+import GetSettingsSelector from "../modules/settings/SettingsSelector";
 
 export default (state, all = true, modules = []) => {
     if (all) {
         return {
             ...GetAuthSelector(state),
+            ...GetSettingsSelector(state),
         };
     }
 

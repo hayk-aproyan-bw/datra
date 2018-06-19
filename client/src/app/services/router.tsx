@@ -7,6 +7,7 @@ export default (): RouteConfig => {
     return (
         <Route path="/" component={Pages.Layout}>
             <IndexRoute component={Pages.Registration}/>
+            <Route path="settings" component={Pages.Settings} />
         </Route>
     );
 };

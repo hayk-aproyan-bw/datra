@@ -27,7 +27,7 @@ export class NavBar extends React.Component<any, INavBarState> {
                 <Navbar color="dark" light expand="md">
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <NavLink className="white" tag={Link} to="/somewhere">Settings</NavLink>
+                            <NavLink className="white" tag={Link} to="/settings">Settings</NavLink>
                         </NavItem>
                     </Nav>
                 </Navbar>

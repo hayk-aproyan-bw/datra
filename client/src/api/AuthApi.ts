@@ -15,4 +15,16 @@ export default class AuthApi {
         });
     }
 
+    static attemptGetSettings = (): AxiosPromise => {
+        let token: string = localStorage.getItem("access_token");
+        return axios.request({
+            method: "GET",
+            url: `${params.apiUrl}/api/settings`,
+            withCredentials: true,
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            }
+        });
+    }
 }

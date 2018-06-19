@@ -15,8 +15,8 @@ export function* attemptRegistration({payload: {data}}: any): any {
     }
 }
 
-function* getRestaurantsSaga(): any {
+function* getAuthSaga(): any {
     yield takeLatest(actions.ATTEMPT_REGISTRATION, attemptRegistration);
 }
 
-export default getRestaurantsSaga;
+export default getAuthSaga;

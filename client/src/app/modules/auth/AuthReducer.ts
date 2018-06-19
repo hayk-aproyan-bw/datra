@@ -33,8 +33,9 @@ export default (state: IAuthData = defaultState, {type, payload}: IAuthActions):
             return <IAuthData>state
                 .set("message", "");
         case actions.REGISTRATION_SUCCESS:
+            localStorage.setItem("access_token", payload.data.data.access_token);
             return <IAuthData>state
-                .set("user", fromJS(payload.data.data));
+                .set("user", fromJS(payload.data.data.user));
 
         case actions.REGISTRATION_FAILED:
             return <IAuthData>state
