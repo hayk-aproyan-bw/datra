@@ -1,0 +1,20 @@
+node_modules/
+.idea/
+dist/
+
+nohup.out
+package-lock.json
+npm-debug.log
+junit.xml
+
+production
+public/img
+public/fonts
+
+.DS_Store
+.DS_Store?
+
+coverage
+
+# dotenv environment variables file
+.env
