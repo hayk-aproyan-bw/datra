@@ -1,8 +1,8 @@
 import { all } from "redux-saga/effects";
-import getRestaurantsSaga from "../modules/places/PlaceSaga";
+import authSaga from "../modules/auth/AuthSaga";
 
 export default function*(): any {
     yield all([
-        getRestaurantsSaga()
+        authSaga()
     ]);
 };

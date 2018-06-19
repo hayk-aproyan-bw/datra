@@ -39,5 +39,8 @@ export default {
             }
         },
         authentication: true
+    },
+    getAll: {
+        authentication: true
     }
 };

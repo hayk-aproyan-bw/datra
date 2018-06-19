@@ -9,7 +9,6 @@ const urls: any = {
         hostname: host,
         httpsEnabled: false,
         apiUrl: apiUrl,
-        googleMapUrl: googleMapUrl
 
     },
     production: {
@@ -17,7 +16,6 @@ const urls: any = {
         httpsEnabled: true,
         env: "production",
         apiUrl: apiUrl,
-        googleMapUrl: googleMapUrl
     }
 };
 

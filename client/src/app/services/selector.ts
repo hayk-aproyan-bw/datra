@@ -1,16 +1,16 @@
-import GetRestaurantsSelector from "../modules/places/PlaceSelector";
+import GetAuthSelector from "../modules/auth/AuthSelector";
 
 export default (state, all = true, modules = []) => {
     if (all) {
         return {
-            ...GetRestaurantsSelector(state),
+            ...GetAuthSelector(state),
         };
     }
 
     let stateInProps: any = {};
 
-    if (modules.includes("places")) {
-        stateInProps = Object.assign({}, stateInProps, {...GetRestaurantsSelector(state)});
+    if (modules.includes("auth")) {
+        stateInProps = Object.assign({}, stateInProps, {...GetAuthSelector(state)});
     }
 
     return stateInProps;

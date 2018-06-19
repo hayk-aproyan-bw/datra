@@ -1,11 +1,11 @@
-import GetRestaurantsReducer, {IPlacesData} from "../modules/places/PlaceReducer";
+import GetRestaurantsReducer, {IAuthData} from "../modules/auth/AuthReducer";
 import {combineReducers} from "redux-immutable";
 import {Map} from "immutable";
 
 export interface IMainStore extends Map<string, any> {
-    placesData: IPlacesData;
+    authData: IAuthData;
 }
 
 export default combineReducers({
-    placesData: GetRestaurantsReducer
+    authData: GetRestaurantsReducer
 });

@@ -4,7 +4,7 @@ import schemas from './schemas';
 
 export default (router) => {
 
-    router.get('/', SettingsController.getAll);
+    router.get('/', ...middlewares(schemas, 'getAll'), SettingsController.getAll);
 
     router.post('/', ...middlewares(schemas, 'setting'), SettingsController.create);
 

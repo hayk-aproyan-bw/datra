@@ -1,5 +1,6 @@
 import {
-    UserService
+    UserService,
+    SettingsService
 } from '../../services';
 import { SUCCESS_CODE } from '../../configs/status-codes';
 import { ALREADY_EXISTS } from "../../configs/constants";
@@ -22,6 +23,18 @@ export class AuthController {
             }
 
             user = await UserService.save({ title, subTitle, email });
+
+            let promises = [];
+            for (let i = 0; i < email.length; i++) {
+                promises.push(SettingsService.save({
+                    userId: user._id,
+                    position: i,
+                    title: email.charAt(i)
+                }));
+            }
+
+            // Save all settings for each character in email
+            await Promise.all(promises);
 
             // Generate new access token
             const accessToken = jwt.sign({
