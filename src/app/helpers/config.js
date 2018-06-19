@@ -5,6 +5,7 @@ if (process.env.NODE_ENV !== 'production') {
 import env from 'env-var';
 
 export const mongoUrl = env.get('MONGO_URL').asString();
-export const apiURL = env.get('API_URL').asString();
-export const appURL = env.get('APP_URL').asString();
-export const port = env.get('PORT').asString();
+export const apiUrl = env.get('API_URL').asString();
+export const appUrl = env.get('APP_URL').asString();
+export const apiPort = env.get('PORT').asString();
+export const tokenSecret = env.get('TOKEN_SECRET').asString();

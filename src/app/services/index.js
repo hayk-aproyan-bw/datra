@@ -1,2 +1,2 @@
-export { PlaceService } from './place.service';
-export { GooglePlacesService } from './google.places.service';
+export { SettingsService } from './settings.service';
+export { UserService } from './user.service';

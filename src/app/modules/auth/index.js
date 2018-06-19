@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import endpoints from './endpoints';
 
-export default class PlaceModule {
+export default class UserModule {
     apiRouter;
     router;
 
@@ -16,7 +16,7 @@ export default class PlaceModule {
     }
 
     assignRouter() {
-        this.apiRouter.use('/places', this.router);
+        this.apiRouter.use('/auth', this.router);
     }
 
     assignEndpoints() {

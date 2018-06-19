@@ -1,5 +1,7 @@
-import Place from './place';
+import User from './user';
+import Settings from './settings';
 
 export default function initModels(mongoose) {
-    Place(mongoose);
+    User(mongoose);
+    Settings(mongoose);
 };

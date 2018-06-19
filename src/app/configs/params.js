@@ -1,19 +1,22 @@
 import {
-    apiURL,
-    appURL,
-    port
+    apiUrl,
+    appUrl,
+    apiPort,
+    tokenSecret
 } from '../helpers/config';
 
 const params = {
     development: {
-        apiUrl: apiURL,
-        appUrl: appURL,
-        apiPort: port
+        apiUrl,
+        appUrl,
+        apiPort,
+        tokenSecret
     },
     production: {
-        apiUrl: apiURL,
-        appUrl: appURL,
-        apiPort: port
+        apiUrl,
+        appUrl,
+        apiPort,
+        tokenSecret
     }
 };
 

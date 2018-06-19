@@ -1,11 +1,14 @@
-import PlaceModule from './place';
+import SettingsModule from './settings';
+import AuthModule from './auth';
 
 export default (router) => {
 
-    const place = new PlaceModule(router);
+    const auth = new AuthModule(router);
+    const settings = new SettingsModule(router);
 
     const modules = [
-        place
+        auth,
+        settings
     ];
 
     modules.forEach((module) => module.createEndpoints());
