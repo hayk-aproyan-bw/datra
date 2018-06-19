@@ -1,21 +1,19 @@
 import {
     host,
-    apiUrl,
-    googleMapUrl
+    apiUrl
 } from "helpers/config";
 
 const urls: any = {
     development: {
         hostname: host,
         httpsEnabled: false,
-        apiUrl: apiUrl,
-
+        apiUrl: apiUrl
     },
     production: {
         hostname: host,
         httpsEnabled: true,
         env: "production",
-        apiUrl: apiUrl,
+        apiUrl: apiUrl
     }
 };
 

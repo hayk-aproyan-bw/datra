@@ -12,27 +12,37 @@ Project is written in React + Redux using the following useful libraries:
 * React-Router
 * Validator
 
-### Installation
+## Config
+
+```console
+cp .env.sample .env
+```
+
+## Setup
 
 Go to project directory and install dependencies.
 
 ```
 npm i
 ```
+
+Fill out the `.env` file.
+
 ### Run in development mode
 
 ```
 npm run start:dev
 ```
 
-### Make production build (For old browsers lik IE 11 it creates special bundle-es5.js file which will contain
-ES5 conversion of the project code generated babel-polyfill)
+### Make production build
+For old browsers lik IE 11 it creates special bundle-es5.js file which will contain ES5 conversion of the
+project code generated babel-polyfill
 
 ```
 npm run build
-
-npm start  (No need in this case as the API server already handles client production index.html file as the main
-template engine in production mode)
 ```
+
+Note: No need to run production mode in this case as the API server already handles client production index.html file as the main
+template engine in production mode
 
 

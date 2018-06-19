@@ -1,6 +1,6 @@
 # Datra API
 
-* [Client](README.md#client)  (Frontend application written in React + Redux)
+* [Client](/client/)  (Frontend application written in React + Redux)
 
 ## Getting Started
 
