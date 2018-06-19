@@ -1,4 +1,4 @@
-# MapApp
+# Datra App
 
 ## Getting Started
 
@@ -24,18 +24,15 @@ npm i
 ```
 npm run start:dev
 ```
-### Run in production mode
+
+### Make production build (For old browsers lik IE 11 it creates special bundle-es5.js file which will contain
+ES5 conversion of the project code generated babel-polyfill)
 
 ```
 npm run build
 
-npm start
-```
-
-### Run unit tests
-
-```
-npm test
+npm start  (No need in this case as the API server already handles client production index.html file as the main
+template engine in production mode)
 ```
 
 
