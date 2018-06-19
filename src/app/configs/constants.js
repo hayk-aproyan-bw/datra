@@ -4,6 +4,7 @@ export const SOMETHING_WENT_WRONG = 'Something went wrong, please try again';
 export const REQUIRED = resource => `${resource} is required`;
 export const INVALID = resource => `${resource} is invalid`;
 export const ALREADY_EXISTS = resource => `${resource} already exists!`;
+export const NOT_EXISTS = resource => `${resource} doesn't exist!`;
 
 export const LENGTH_REQUIRED = (resource, options) => {
     const { min, max } = options;

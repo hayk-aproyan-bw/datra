@@ -8,8 +8,6 @@ npm-debug.log
 junit.xml
 
 production
-public/img
-public/fonts
 
 .DS_Store
 .DS_Store?

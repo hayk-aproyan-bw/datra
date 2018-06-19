@@ -9,12 +9,11 @@ import corsOptions from './configs/cors';
 import cors from 'cors';
 import expressValidator from 'express-validator';
 import { BAD_REQUEST_CODE } from './configs/status-codes';
-
 import cookieParser from 'cookie-parser';
 import { ServiceUnavailable } from './errors';
-
 import configPassport from './strategies/passport-jwt';
 import passport from 'passport';
+import params from './configs/params';
 
 class Application {
     app;
@@ -64,6 +63,19 @@ class Application {
     setRouter() {
         this.router = express.Router();
         this.app.use(`/api`, this.router);
+
+        if (process.env.NODE_ENV === 'production') {
+            let options = {
+                maxAge: '30m',
+                index: false
+            };
+            this.app.use(express.static('../../client/production'), options);
+            this.app.get('bundle.js', (req, res, next) => {
+                req.url = req.url + '.gz';
+                res.set('Content-Encoding', 'gzip');
+                next();
+            });
+        }
     }
 
     setErrorHandler() {

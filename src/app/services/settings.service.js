@@ -13,12 +13,16 @@ export class SettingsService {
         return Settings.create(settings);
     }
     
-    static async getAll(userId) {
+    static async getAll(params) {
         if (params) {
-            return await Settings.find({ userId });
+            return await Settings.find(params);
         }
 
         return await Settings.find();
+    }
+
+    static async getByUserAndId(userId, id) {
+        return await Settings.findOne({ userId, _id: id });
     }
 
 }

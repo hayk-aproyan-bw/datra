@@ -2,6 +2,8 @@ import { CREATED_CODE, SUCCESS_CODE } from '../../configs/status-codes';
 import {
     SettingsService
 } from '../../services';
+import {BadRequest, NotFound} from "../../errors";
+import {INVALID, NOT_EXISTS} from "../../configs/constants";
 
 export class SettingsController {
     /**
@@ -34,11 +36,19 @@ export class SettingsController {
      * @returns {Promise.<*>}
      */
     static async create(req, res, next) {
-        try {
-            const payload = req.body;
-            payload.userId = req.user._id;
+        const { title, position, backgroundColor } = req.body;
 
-            let setting = await SettingsService.save(payload);
+        try {
+            if (position < 0 || position > (req.user.email.length - 1)) {
+                throw new BadRequest(INVALID('Position'));
+            }
+
+            let setting = await SettingsService.save({
+                title,
+                position,
+                backgroundColor,
+                userId: req.user._id
+            });
 
             return res.status(CREATED_CODE).json(setting);
         }
@@ -56,7 +66,32 @@ export class SettingsController {
      * @returns {Promise<*>}
      */
     static async update(req, res, next) {
-        // @Todo
+        const { title, position, backgroundColor } = req.body;
+
+        try {
+            if (position < 0 || position > (req.user.email.length - 1)) {
+                throw new BadRequest(INVALID('Position'));
+            }
+
+            let setting = await SettingsService.getByUserAndId(req.user._id, req.params.id);
+
+            if (setting === null) {
+                throw new NotFound(NOT_EXISTS('Setting'));
+            }
+
+            setting.title = title;
+            setting.position = position;
+            setting.backgroundColor = backgroundColor;
+            console.log(setting);
+
+            setting = await SettingsService.save(setting);
+
+            return res.status(SUCCESS_CODE).json(setting);
+
+        } catch (err) {
+            next(err);
+        }
+
     }
 
 }

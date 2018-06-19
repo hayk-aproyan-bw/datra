@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import endpoints from './endpoints';
 
-export default class PlaceModule {
+export default class SettingsModule {
     apiRouter;
     router;
 

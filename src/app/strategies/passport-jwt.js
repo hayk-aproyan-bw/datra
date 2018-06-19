@@ -1,5 +1,6 @@
-import { User } from '../models';
-import { USER_NOT_EXIST } from '../configs/constants';
+import mongoose from "mongoose";
+const User = mongoose.model('User');
+import { NOT_EXISTS } from '../configs/constants';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { AuthError } from '../errors';
 
@@ -10,7 +11,7 @@ export default (secret, passport) => {
     passport.deserializeUser(async (id, done) => {
         let user = await User.query().findById(id)
                 .first();
-        user ? done(null, user) : done(new AuthError(USER_NOT_EXIST), null);
+        user ? done(null, user) : done(new AuthError(NOT_EXISTS), null);
     });
 
     let jwtOptions = {
@@ -19,12 +20,12 @@ export default (secret, passport) => {
     };
 
     let strategy = new Strategy (jwtOptions, async (payload, next) => {
-        let user = await User.query().findById(payload.id)
-                .first();
+        let user = await User.findById(payload.id);
+
         if (user) {
             next(null, user);
         } else {
-            next(new AuthError(USER_NOT_EXIST), false);
+            next(new AuthError(NOT_EXISTS), false);
         }
     });
     passport.use(strategy);

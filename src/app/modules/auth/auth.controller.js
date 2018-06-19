@@ -11,7 +11,7 @@ import moment from 'moment';
 export class AuthController {
 
     static async signup(req, res, next) {
-        const payload = req.body;
+        const { title, subTitle, email } = req.body;
 
         try {
 
@@ -21,8 +21,7 @@ export class AuthController {
                 throw new BadRequest(ALREADY_EXISTS('User'));
             }
 
-            user = await UserService.save(payload);
-
+            user = await UserService.save({ title, subTitle, email });
 
             // Generate new access token
             const accessToken = jwt.sign({

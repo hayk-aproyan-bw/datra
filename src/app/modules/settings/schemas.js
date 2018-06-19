@@ -1,17 +1,19 @@
 import {
     REQUIRED,
     INVALID,
+    LENGTH_REQUIRED,
     SETTINGS_TITLE_MIN_LENGTH,
     SETTINGS_TITLE_MAX_LENGTH
 } from '../../configs/constants';
+
 
 export default {
     setting: {
         validation: {
             title: {
-                in: 'query',
+                in: 'body',
                 notEmpty: {
-                    errorMessage: REQUIRED('Longitude')
+                    errorMessage: REQUIRED('Title')
                 },
                 isLength: {
                     options: [{ min: SETTINGS_TITLE_MIN_LENGTH, max: SETTINGS_TITLE_MAX_LENGTH }],
@@ -19,7 +21,7 @@ export default {
                 }
             },
             position: {
-                in: 'query',
+                in: 'body',
                 notEmpty: {
                     errorMessage: REQUIRED('Position')
                 },
